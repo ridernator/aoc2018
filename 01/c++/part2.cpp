@@ -3,7 +3,7 @@
 #include <sstream>
 #include <fstream>
 #include <vector>
-#include <algorithm>
+#include <set>
 
 #define INPUT "../data/input"
 
@@ -25,7 +25,7 @@ std::stringstream readFile(const std::string& filename = INPUT) {
 int main() {
     int64_t frequency = 0;
     std::vector<int64_t> changes;
-    std::vector<int64_t> frequencies;
+    std::set<int64_t> frequencies;
     std::stringstream contents = readFile();
     std::string line;
 
@@ -40,9 +40,7 @@ int main() {
         for (const int64_t change : changes) {
             frequency += change;
 
-            if (std::find(frequencies.begin(), frequencies.end(), frequency) == frequencies.end()) {
-                frequencies.push_back(frequency);
-            } else {
+            if (!frequencies.insert(frequency).second) {
                 std::cout << "First frequency seen twice is " << frequency << "Hz" << std::endl;
 
                 std::exit(EXIT_SUCCESS);
