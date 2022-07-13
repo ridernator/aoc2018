@@ -22,7 +22,7 @@ std::stringstream readFile(const std::string& filename = INPUT) {
 }
 
 /**
- * Read a file entirely into a vecor of strings
+ * Read a file entirely into a vector of strings
  * 
  * @param The name of the file to read
  * @return The vector of lines in the file
