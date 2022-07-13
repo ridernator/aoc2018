@@ -25,7 +25,7 @@ std::stringstream readFile(const std::string& filename = INPUT) {
 int main() {
     int64_t frequency = 0;
     std::vector<int64_t> changes;
-    std::set<int64_t> frequencies;
+    std::set<int64_t> frequencies = {0};
     std::stringstream contents = readFile();
     std::string line;
 
