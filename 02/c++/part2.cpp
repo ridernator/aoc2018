@@ -67,10 +67,10 @@ int main() {
             if (matchingChars.size() == line1->size() - 1) {
                 std::cout << "Common letters are " << matchingChars << std::endl;
 
-                goto exit;
+                return 0;
             }
         }
     }
 
-    exit: return 0;
+    return 1;
 }

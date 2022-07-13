@@ -43,10 +43,10 @@ int main() {
             if (!frequencies.insert(frequency).second) {
                 std::cout << "First frequency seen twice is " << frequency << "Hz" << std::endl;
 
-                goto exit;
+                return 0;
             }
         }
     }
 
-    exit: return 0;
+    return 1;
 }
